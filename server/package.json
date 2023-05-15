@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "real-estate-project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Saarim Akash jaykishan",
+  "license": "ISC"
+}
