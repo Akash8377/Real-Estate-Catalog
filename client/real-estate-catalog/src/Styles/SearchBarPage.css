@@ -1,0 +1,21 @@
+.logoimage{
+    position: absolute;
+left: 6.69%;
+right: 88.62%;
+top: 4.17%;
+bottom: 91.76%;
+height: 4.68rem;
+width: 6rem;
+
+font-family: 'Source Sans Pro';
+font-style: normal;
+font-weight: 700;
+font-size: 35px;
+line-height: 44px;
+}
+
+#sidebar{
+    width:  20rem;
+    height: 50rem;
+    background: #E1F9F4;
+}
