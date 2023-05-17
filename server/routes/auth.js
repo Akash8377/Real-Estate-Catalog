@@ -9,9 +9,9 @@ const router = express.Router()
 
 const requireLogin = require('../middleware/requireLogin')
 
-router.get('/protected',requireLogin, (req, res) => {
-    res.send('Add Property')
-})
+// router.get('/protected',requireLogin, (req, res) => {
+//     res.send('Add Property')
+// })
 
 router.post('/signup', (req, res) => {
     const {email, password, confirmpassword} = req.body
@@ -69,7 +69,8 @@ router.post('/signin', (req, res) => {
             if(isMatched){
                 // res.json({message:'Signed-In successfully'})
                 const token = jwt.sign({_id:savedUser._id}, JWT_Secret)
-                res.json({token})
+                const {_id,email} = savedUser
+                res.json({token, user:{_id, email}})
             }else{
                 return res.status(422).json({error: 'Invalid Email or password'})
             }
