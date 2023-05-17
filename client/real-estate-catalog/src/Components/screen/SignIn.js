@@ -1,0 +1,76 @@
+import { Link, useNavigate } from "react-router-dom"
+import './signup-in.css'
+import { useState } from "react"
+import swal from "sweetalert"
+
+const SignIn = () => {
+
+    const history = useNavigate()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+    const [flag, setFlag] = useState(false)
+
+    const userData = () => {
+        fetch("/signin", {
+            method: 'post',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.error){
+                console.log(data.error)
+                setError(data.error)
+                setFlag(true)
+            }else{
+                swal({
+                    title: 'Welcome to Real-Estate-Catalog',
+                    icon: "success"
+                })
+                history('/home')
+            }
+        })
+        .catch(err => console.log(err))
+    }
+
+    return <div className="form-container">
+    <div className="form">
+        <div className='font-s-l font-c-l logo-m-b'>Logo</div>
+        <p className='font-s-sm b-m-signin para-m-b-sign font-opct'>Enter your credentials to access your account</p>
+        <div className="showMessage">{!flag ? "" : error}</div>
+        <div className="input-filed">
+            <input 
+                className="b-m-signin"
+                type="text"
+                placeholder="Mail ID"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+            />
+        </div>
+        <div className="input-filed">
+            <input 
+                className="b-m-signin"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+            />
+        </div>
+        <div className="signUp-btn">
+            <button
+                onClick={() => userData()}
+            >Sign In</button>
+        </div>
+    </div>
+    <p className='font-s-sm m-top'>Don't have an account? <Link to='/signup' className='font-s-n link-font-w'>Sign Up</Link></p>
+</div>
+}
+
+export default SignIn
