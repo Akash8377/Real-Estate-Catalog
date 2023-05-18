@@ -18,7 +18,7 @@ const App = () => {
             <Route path="/addproperty" element={<AddProperty />}></Route>
           </Route>
           {/* <Route path="/logout" element={<Logout />}></Route> */}
-        <Route path="*" element={<div><h1>404</h1>Page not Found</div>}></Route>
+          <Route path="*" element={<div><h1>404</h1>Page not Found</div>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
