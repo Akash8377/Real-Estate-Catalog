@@ -40,7 +40,7 @@ const SignIn = () => {
         .catch(err => console.log(err))
     }
 
-    return <div className="form-container">
+    return <div className="form-container-main">
     <div className="form">
         <div className='font-s-l font-c-l logo-m-b'>Logo</div>
         <p className='font-s-sm b-m-signin para-m-b-sign font-opct'>Enter your credentials to access your account</p>

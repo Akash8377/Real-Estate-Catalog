@@ -47,7 +47,7 @@ const SignUp = () => {
         })
     }
 
-    return <div className="form-container">
+    return <div className="form-container-main">
         <div className="form">
             <div className='font-s-l font-c-l logo-m-b'>Logo</div>
             <p className='font-s-sm  font-opct'>Create New Account</p>
