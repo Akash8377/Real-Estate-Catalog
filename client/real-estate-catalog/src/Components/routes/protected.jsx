@@ -5,7 +5,7 @@ const Proctected = ()=>{
     if(token === undefined) token="";
     return(
         <>
-        {token?<Outlet/>: <Navigate to="/signup"/>}
+        {token?<Outlet/>: <Navigate to="/home"/>}
         </>
     )
 }
