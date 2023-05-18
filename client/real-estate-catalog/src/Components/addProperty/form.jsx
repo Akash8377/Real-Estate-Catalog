@@ -58,7 +58,7 @@ const Form = () => {
     function handleSubmit() {
         console.log(formData)
         axios({
-            url: "//url",//for url
+            url: "",//for url
             method: "POST",
             headers: {
                 authorization: authToken
@@ -134,7 +134,7 @@ const Form = () => {
     return (
         <>
             <div className='add-property-container'>
-                <h3 style={{ color: "grey", marginLeft: "-575px" }}>
+                <h3 style={{ color: "grey", marginLeft: "-755px" }}>
                     ADD NEW PROPERTY
                 </h3>
                 <table className='navbar'>

@@ -3,7 +3,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin: auto;
+        border-color: #0e0909;
         align-content: space-around;
     }
 
@@ -12,27 +12,54 @@
         padding: 15px;
         line-height: 30px;
         padding: 25px 50px 0px 110px;
-        margin-top: 25px;
+        margin-top: 35px;
+        margin-left:75px;
+        padding-bottom:6%;
         background-color: white;
+        border-radius: 20px;
+        box-shadow: 1px 1px 4px 1px #504d4d
+
+        
+        
     }
 }
 
 .input {
-    width: 256px;
-    height: 27px;
+    width: 356px;
+    height: 37px;
+   
 }
 
 .selection-input {
-    width: 263px;
-    height: 32px;
+    width: 363px;
+    height: 42px;
+    
+    
 }
 
 .input-box {
     height: 75px;
+    
+    
+    font-size: 20px;
+    color:#7D7D7D
+}
+
+
+select{
+    color:#7D7D7D;
+}
+label{
+    color:#C3C3C3;
+    font-size: 44px;
+    margin-top: 2%;
+    
+    
 }
 
 .add-property-container {
     text-align: center;
+    font-size: 15px;
     font-weight: 500;
     color: grey;
     margin: auto;
@@ -44,9 +71,9 @@
     background-color: #7fbfff;
     color: white;
     border-radius: 50px;
-    margin: 10px;
+    margin: 30px;
     padding: 10px;
-    width: 150px;
+    width: 200px;
     border-color: #7fbfff;
 }
 
@@ -55,9 +82,12 @@
 }
 
 .navbar {
-    width: 57%;
+    width: 78%;
+    height:30px;
+    border-radius: 30px;
     margin: auto;
     height: 32px;
     background-color: white;
     margin-top: 20px;
+    
 }

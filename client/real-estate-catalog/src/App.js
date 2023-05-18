@@ -3,7 +3,7 @@ import Signup from "./Components/screen/SignUp";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 // import PropertyView from "./Components/getList/PropertyView";
 // import Logout from "../logout/logout";
-import Proctected from "./Components/routes/protected.jsx";
+// import Proctected from "./Components/routes/protected.jsx";
 import AddProperty from "./Components/addProperty/main";
 import PropertyView from "./Components/getList/PropertyView";
 
