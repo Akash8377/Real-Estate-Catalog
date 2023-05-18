@@ -34,6 +34,8 @@ const SignIn = () => {
                     title: 'Welcome to Real-Estate-Catalog',
                     icon: "success"
                 })
+                localStorage.setItem('jwt', data.token)
+                localStorage.setItem('user', JSON.stringify(data.user))
                 history('/home')
             }
         })

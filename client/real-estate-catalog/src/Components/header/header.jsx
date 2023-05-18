@@ -1,6 +1,7 @@
 import "./header.css";
 import { CgChevronDown } from "react-icons/cg";
 import { BiUser } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -10,20 +11,26 @@ const Header = () => {
     // const n1.email = userId.split(':')[2]
     const val = n1.email
     const name = val.split('@')[0]
+
     // const userEmail = userId.email
     // const id = userEmail.split('@')[0]
     // console.log(userName)
-    console.log(n1.email)
+    const id = n1._id.slice(20)
+    console.log(id)
 
+    const navigate = useNavigate()
 
     return (
         <>
             <div className='headercontainer'>
-                <div className='userid'>USER ID: {name}  </div>
-                <div className='dropdown'><BiUser />{name} <CgChevronDown />
-                    <div className="dropdown-content">
-                        
-                    </div>
+                <div className='userid'>USER ID: {id}</div>
+                <div className='dropdown'><BiUser /> {name.toUpperCase()}<CgChevronDown />
+                    <div className="dropdown-content"
+                        onClick={() => {
+                            localStorage.clear()
+                            navigate('/')
+                        }}
+                    >Logout</div>
                 </div>
             </div>
             <div className="headerbtmline"></div>
