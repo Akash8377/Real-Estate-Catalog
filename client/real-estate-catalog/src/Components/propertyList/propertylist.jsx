@@ -2,13 +2,28 @@ import "./propertylist.css"
 import { FaRegImages } from 'react-icons/fa'
 import { AiFillEye } from 'react-icons/ai';
 import { MdEdit } from 'react-icons/md';
-const PropertyList = ({ propertydetails }) => {
+import { useEffect, useState } from "react";
+import axios from 'axios';
+const PropertyList = ( ) => {
 
   const soldstyle = {
     color: '#416899',
     background: '#F5FAF5',
 
   }
+
+  const [propertydetails ,setpropertydetails ]=useState([])
+
+ useEffect(()=>{
+
+  axios.get('http://localhost:5000/getpropertylist').then((response)=>{
+            console.log(response.data.result);
+            setpropertydetails(response.data.result);
+            console.log(propertydetails,'information')
+    }).catch(error=>console.log(error))
+   
+ },[])
+
   return (
     <>
       <div className='propertycontainer'>

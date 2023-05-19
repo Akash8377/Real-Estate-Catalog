@@ -1,5 +1,7 @@
 
+import axios from 'axios';
 import '../../Styles/form.css';
+// import 'axios'
 
 const LocationInfo = ({ formData, setFormData }) => {
     const handleFormData = (e) => {
@@ -8,7 +10,10 @@ const LocationInfo = ({ formData, setFormData }) => {
         setFormData(previousData => {
             return { ...previousData, [name]: value }
         });
-    }
+        console.log(formData)
+        }
+    
+       
 
     return (
         <>

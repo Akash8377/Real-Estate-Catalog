@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 
 router.use(bodyParser.json())
 
-router.post("/",(req,res)=>{
+router.post("/newprop",(req,res)=>{
     const newProperty =  propertModel({
         propertyType: req.body.propertyType,
         price: req.body.price,
@@ -47,7 +47,11 @@ router.post("/",(req,res)=>{
     })
 
     newProperty.save().then((data)=>{
-        res.send('Property Added')
+        console.log(data);
+        res.status(200).json({
+            status:'property added',
+            result:data
+        })
     }).catch((e)=>{
         console.log(e.message)
         res.send(e.message)

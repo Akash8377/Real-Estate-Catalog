@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 // import Proctected from "./Components/routes/protected.jsx";
 import AddProperty from "./Components/addProperty/main";
 import PropertyView from "./Components/getList/PropertyView";
+// import PropertyList from "./Components/propertyList/propertylist";
+import Main from './Components/addProperty/main';
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
           {/* </Route> */}
           {/* <Route path="/logout" element={<Logout />}></Route> */}
           <Route path="*" element={<div><h1>404</h1>Page not Found</div>}></Route>
+          <Route path="/listproperty" element={<Main/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

@@ -53,12 +53,20 @@ const Form = () => {
 
     function handlePage() {
         setPage(page + 1);
+        navigate("/listproperty");
     };
+
+    // axios.post("http://localhost:5000/newprop").then((response)=>{
+    //     console.log(response)
+    // }).catch((err)=>{
+    //     throw err
+    // })
+
 
     function handleSubmit() {
         console.log(formData)
         axios({
-            url: "",//for url
+            url: "http://localhost:5000/newprop",//for url
             method: "POST",
             headers: {
                 authorization: authToken

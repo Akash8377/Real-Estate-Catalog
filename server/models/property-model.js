@@ -5,7 +5,7 @@ const propertyschema = new mongoose.Schema({
         require: [true, "Please Select Property Type"]
     },
     price: {
-        type: String,
+        type: Number,
         require: [true, "Please Add Price"]
     },
     propertyAge: {
@@ -25,7 +25,7 @@ const propertyschema = new mongoose.Schema({
         require: [true, "Please Select Ownership Type"]
     },
     propertyApproved: {
-        type: String,
+        type: Boolean,
         require: [true, "Please Select Property Approved Type"]
     },
     bankLoan: {
@@ -33,15 +33,15 @@ const propertyschema = new mongoose.Schema({
         require: [true, "Please Select Bank Loan Type"]
     },
     length: {
-        type: String,
+        type: Number,
         require: [true, "Please Add Length"]
     },
     breadth: {
-        type: String,
+        type: Number,
         require: [true, "Please Add Breadth"]
     },
     totalArea: {
-        type: String,
+        type: Number,
         require: [true, "Please Add Total Area"]
     },
     areaUnit: {
@@ -49,11 +49,11 @@ const propertyschema = new mongoose.Schema({
         require: [true, "Please Add Area Unit"]
     },
     noOfBHK: {
-        type: String,
+        type: Number,
         require: [true, "Please Select Number of BHK"]
     },
     noOfFloor: {
-        type: String,
+        type: Number,
         require: [true, "Please Select Number of Floor"]
     },
     attached: {
@@ -77,7 +77,7 @@ const propertyschema = new mongoose.Schema({
         require: [true, "Please Select Lift Type"]
     },
     electricity: {
-        type: String,
+        type: Number,
         require: [true, "Please Add Electricity Phase"]
     },
     facing: {
@@ -89,7 +89,7 @@ const propertyschema = new mongoose.Schema({
         require: [true, "Please Select Owner Type"]
     },
     mobile: {
-        type: String,
+        type: Number,
         require: [true, "Please Add Mobile Number"]
     },
     postedBy: {
@@ -133,11 +133,11 @@ const propertyschema = new mongoose.Schema({
         require: [true, "Please Add Landmark"]
     },
     latitude: {
-        type: String,
+        type: Number,
         require: [true, "Please Add Latitude"]
     },
     longitude: {
-        type: String,
+        type: Number,
         require: [true, "Please Add Longitude"]
     },
     views: String,
