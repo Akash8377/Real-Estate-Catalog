@@ -1,5 +1,7 @@
 
 import '../../Styles/form.css';
+import { AiFillCamera } from "react-icons/ai";
+
 
 const GeneralInfo = ({formData, setFormData}) => {
     const handleFormData = (e) => {
@@ -60,6 +62,17 @@ const GeneralInfo = ({formData, setFormData}) => {
                     <option value='No'>No</option>
                 </select>
             </label><br/>
+
+            <label className='photo-input' htmlFor='photo-input'><AiFillCamera className='camera-icon'/>Add Photo<br/>
+                <input type='file'
+                    id='photo-input'
+                    onChange={e => handleFormData(e)}
+                    // className='photo-input'
+                    // value={"" || formData.mobile}
+                />
+            </label>
+            {/* <span className='add-photo'>Add Photo</span> */}
+
         </form>
     )
 }
