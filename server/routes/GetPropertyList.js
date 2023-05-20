@@ -1,11 +1,11 @@
 const GetListRouter=require('express').Router();
-const PropertyModel=require('../models/property-model');
+const PropertyDetailsModel=require('../models/property-model');
 
 
 GetListRouter.get('/getpropertylist',async(req,res)=>{
     try{
-      const PropertyList= await PropertyModel.find({});
-      console.log(PropertyList)
+      const PropertyList= await PropertyDetailsModel.find({});
+      // console.log(PropertyList)
       if(PropertyList){
         res.status(201).json({
             status:"success",
@@ -23,7 +23,7 @@ GetListRouter.get('/getpropertylist',async(req,res)=>{
 GetListRouter.get('/search',async(req,res)=>{
     try{
         const prop=req.body;
-      const PropertyList= await PropertyModel.find({prop});
+      const PropertyList= await PropertyDetailsModel.find({prop});
       console.log(PropertyList)
       if(PropertyList){
         res.status(201).json({

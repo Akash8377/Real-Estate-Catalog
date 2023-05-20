@@ -108,6 +108,10 @@ const propertyschema = new mongoose.Schema({
         type: String,
         require: [true, "Please Select PPD Package Type"]
     },
+    image: {
+        type: String,
+        require: true
+    },
     email: {
         type: String,
         require: [true, "Please Add Email"]
