@@ -68,7 +68,7 @@ const GeneralInfo = ({formData, setFormData}) => {
                     id='photo-input'
                     onChange={e => handleFormData(e)}
                     // className='photo-input'
-                    value={"" || formData.mobile}
+                    // value={"" || formData.mobile}
                 />
             </label>
             {/* <span className='add-photo'>Add Photo</span> */}
