@@ -41,6 +41,7 @@ const Form = () => {
         saleType: '',
         featuredPackage: '',
         PPDPackage: '',
+        image: '',
         email: '',
         city: '',
         area: '',
@@ -64,7 +65,30 @@ const Form = () => {
 
 
     function handleSubmit() {
-        console.log(formData)
+        // console.log(formData.image)
+
+        const data = new FormData()
+        data.append('file', formData.image)
+        data.append('upload_preset','real-estate')
+        data.append('cloud_name', 'gp10')
+        fetch('https://api.cloudinary.com/v1_1/gp10/image/upload',{
+            method:"post",
+            body:data
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.url)
+            setFormData(prevFormData => ({
+                ...prevFormData,
+                image: data.url,
+              }));
+              console.log(formData.image)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
+        
         axios({
             url: "http://localhost:5000/newprop",//for url
             method: "POST",

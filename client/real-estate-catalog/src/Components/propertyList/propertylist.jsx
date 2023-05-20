@@ -17,9 +17,9 @@ const PropertyList = ( ) => {
  useEffect(()=>{
 
   axios.get('http://localhost:5000/getpropertylist').then((response)=>{
-            console.log(response.data.result);
+            // console.log(response.data.result);
             setpropertydetails(response.data.result);
-            console.log(propertydetails,'information')
+            // console.log(propertydetails,'information')
     }).catch(error=>console.log(error))
    
  })
