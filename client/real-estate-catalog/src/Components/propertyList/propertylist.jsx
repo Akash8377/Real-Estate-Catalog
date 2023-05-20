@@ -22,7 +22,7 @@ const PropertyList = ( ) => {
             console.log(propertydetails,'information')
     }).catch(error=>console.log(error))
    
- },[])
+ })
 
   return (
     <>
