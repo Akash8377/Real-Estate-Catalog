@@ -15,6 +15,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Signin />}></Route>
+          <Route path="/listproperty" element={<Main/>}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           {/* <Route element={<Proctected />}> */}
             <Route path="/home" element={<PropertyView />}></Route>
@@ -22,7 +23,6 @@ const App = () => {
           {/* </Route> */}
           {/* <Route path="/logout" element={<Logout />}></Route> */}
           <Route path="*" element={<div><h1>404</h1>Page not Found</div>}></Route>
-          <Route path="/listproperty" element={<Main/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

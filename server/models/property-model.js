@@ -49,11 +49,11 @@ const propertyschema = new mongoose.Schema({
         require: [true, "Please Add Area Unit"]
     },
     noOfBHK: {
-        type: Number,
+        type: String,
         require: [true, "Please Select Number of BHK"]
     },
     noOfFloor: {
-        type: Number,
+        type: String,
         require: [true, "Please Select Number of Floor"]
     },
     attached: {
