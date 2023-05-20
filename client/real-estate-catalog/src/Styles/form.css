@@ -91,3 +91,18 @@ label{
     margin-top: 20px;
     
 }
+
+#photo-input{
+    display: none;   
+}
+.photo-input{
+    font-size: medium;
+    /* color: white; */
+    
+}
+.camera-icon{
+    background-color: #6AB4F8;
+    padding: 20px;
+    color: white;
+    border-radius: 50%;
+}

@@ -74,12 +74,12 @@ const Form = () => {
             data: formData
         }).then((res) => {
             alert("added successfully")
-            navigate("/listproperty");
+            navigate("/home");
         })
     };
 
     function handelCancel() {
-        navigate("/listproperty")
+        navigate("/home")
     };
 
     const conditionalComponent = () => {
