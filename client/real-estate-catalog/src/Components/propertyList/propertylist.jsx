@@ -4,25 +4,27 @@ import { AiFillEye } from 'react-icons/ai';
 import { MdEdit } from 'react-icons/md';
 import { useEffect, useState } from "react";
 import axios from 'axios';
-const PropertyList = ( ) => {
-
+const PropertyList = ( {propertydetail}) => {
+  console.log(propertydetail)
   const soldstyle = {
     color: '#416899',
     background: '#F5FAF5',
 
   }
 
-  const [propertydetails ,setpropertydetails ]=useState([])
+  // const [propertydetails ,setpropertydetails ]=useState([])
 
- useEffect(()=>{
+//  useEffect(()=>{
 
-  axios.get('http://localhost:5000/getpropertylist').then((response)=>{
-            console.log(response.data.result);
-            setpropertydetails(response.data.result);
-            console.log(propertydetails,'information')
-    }).catch(error=>console.log(error))
+//   axios.get('http://localhost:5000/getpropertylist').then((response)=>{
+//             console.log(response.data.result);
+//             setpropertydetails(response.data.result);
+//             console.log(propertydetails,'information')
+//     }).catch(error=>console.log(error))
    
- },[])
+//  },[])
+
+//  isearchbtn
 
   return (
     <>
@@ -50,7 +52,7 @@ const PropertyList = ( ) => {
             </tr>
           </thead>
           <tbody>
-            {propertydetails.map((propertydata, i) => (
+            {propertydetail.map((propertydata, i) => (
               <tr className='tabledata' key={i}><td className="tdtext ppdidtxt">{propertydata._id}</td>
                 <td className="tdtext"><FaRegImages /></td>
                 <td className="tdtext">{propertydata.propertyType}</td>
