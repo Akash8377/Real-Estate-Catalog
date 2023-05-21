@@ -2,7 +2,7 @@ import "./propertylist.css"
 import { FaRegImages } from 'react-icons/fa'
 import { AiFillEye } from 'react-icons/ai';
 import { MdEdit } from 'react-icons/md';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import { useEffect, useState } from "react";
 // import axios from 'axios';
 const PropertyList = ( {propertydetail}) => {
@@ -55,7 +55,7 @@ const PropertyList = ( {propertydetail}) => {
           <tbody>
             {propertydetail.map((propertydata, i) => (
               <tr className='tabledata' key={i}><td className="tdtext ppdidtxt">{propertydata._id}</td>
-                <td className="tdtext"><a href={propertydata.image} target="_blank"><FaRegImages /></a></td>
+                <td className="tdtext"><a href={propertydata.image} target="_blank" rel="noreferrer"><FaRegImages /></a></td>
                 <td className="tdtext">{propertydata.propertyType}</td>
                 <td className="tdtext tdmobile">{propertydata.mobile}</td>
                 <td className="tdtext">{propertydata.totalArea}</td>
