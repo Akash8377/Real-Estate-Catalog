@@ -24,17 +24,32 @@ GetListRouter.get('/search',async(req,res)=>{
     try{
         const {ppid}=req.query;
         console.log(ppid)
-      const PropertyList= await PropertyModel.find({_id:ppid});
-      console.log(PropertyList,1)
-      if(PropertyList){
-        res.status(201).json({
-            status:"success",
-            result:PropertyList})
-      }else{
-        res.status(400).json({
-            status:"failure",
-            result:'could not find'})
-      }
+        if(ppid){
+          const PropertyList= await PropertyModel.find({_id:ppid});
+          console.log(PropertyList,1)
+          if(PropertyList){
+            res.status(201).json({
+                status:"success",
+                result:PropertyList})
+          }else{
+            res.status(400).json({
+                status:"failure",
+                result:'could not find'})
+          }
+        }else{
+          const PropertyList= await PropertyModel.find({});
+          console.log(PropertyList,1)
+          if(PropertyList){
+            res.status(201).json({
+                status:"success",
+                result:PropertyList})
+          }else{
+            res.status(400).json({
+                status:"failure",
+                result:'could not find'})
+          }
+        }
+     
     }catch(err){
         throw err
     }
