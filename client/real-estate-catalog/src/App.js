@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 // import Proctected from "./Components/routes/protected.jsx";
 import AddProperty from "./Components/addProperty/main";
 import PropertyView from "./Components/getList/PropertyView";
+import EditPage from "./Components/EditPage/EditPage";
 // import PropertyList from "./Components/propertyList/propertylist";
 import Main from './Components/addProperty/main';
 
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Signin />}></Route>
           <Route path="/listproperty" element={<Main/>}></Route>
+          <Route path="/editproperty" element={<EditPage/>}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           {/* <Route element={<Proctected />}> */}
             <Route path="/home" element={<PropertyView />}></Route>

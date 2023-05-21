@@ -4,6 +4,8 @@ import { AiFillEye } from 'react-icons/ai';
 import { MdEdit } from 'react-icons/md';
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
 const PropertyList = ( {propertydetail}) => {
   console.log(propertydetail)
   const soldstyle = {
@@ -12,19 +14,23 @@ const PropertyList = ( {propertydetail}) => {
 
   }
 
-  // const [propertydetails ,setpropertydetails ]=useState([])
+const navigate = useNavigate();
+const EditFunc = (propertydata) => {
+  navigate('/editproperty', { state: { propertydetail: propertydata } });
+};
+//   // const [propertydetails ,setpropertydetails ]=useState([])
 
-//  useEffect(()=>{
+// //  useEffect(()=>{
 
-  axios.get('http://localhost:5000/getpropertylist').then((response)=>{
-            console.log(response.data.result);
-            setpropertydetails(response.data.result);
-            console.log(propertydetails,'information')
-    }).catch(error=>console.log(error))
+//   axios.get('http://localhost:5000/getpropertylist').then((response)=>{
+//             console.log(response.data.result);
+//             setpropertydetails(response.data.result);
+//             console.log(propertydetails,'information')
+//     }).catch(error=>console.log(error))
    
-//  },[])
+// //  },[])
 
-//  isearchbtn
+// //  isearchbtn
 
   return (
     <>
@@ -65,7 +71,7 @@ const PropertyList = ( {propertydetail}) => {
 
                   <div className="actionbtn">
                     <AiFillEye />
-                    <MdEdit />
+                    <MdEdit onClick={() => EditFunc(propertydata)}/>
                   </div>
                 </td>
               </tr>
