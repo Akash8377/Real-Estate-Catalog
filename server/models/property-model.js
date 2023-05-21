@@ -25,7 +25,7 @@ const propertyschema = new mongoose.Schema({
         require: [true, "Please Select Ownership Type"]
     },
     propertyApproved: {
-        type: Boolean,
+        type: String,
         require: [true, "Please Select Property Approved Type"]
     },
     bankLoan: {
