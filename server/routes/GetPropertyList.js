@@ -22,16 +22,10 @@ GetListRouter.get('/getpropertylist',async(req,res)=>{
 
 GetListRouter.get('/search',async(req,res)=>{
     try{
-<<<<<<< HEAD
-        const prop=req.body;
-      const PropertyList= await PropertyDetailsModel.find({prop});
-      console.log(PropertyList)
-=======
         const {ppid}=req.query;
         console.log(ppid)
-      const PropertyList= await PropertyModel.find({_id:ppid});
+      const PropertyList= await PropertyDetailsModel.find({_id:ppid});
       console.log(PropertyList,1)
->>>>>>> e6f666b088e17619deed2e71daa7aa3e07d06ca1
       if(PropertyList){
         res.status(201).json({
             status:"success",
@@ -52,10 +46,10 @@ GetListRouter.put('/edit/:ppid',async(req,res)=>{
     const {ppid}=req.params;
     console.log(ppid)
     console.log(req.body)
-    const Property=await PropertyModel.findOne({_id:ppid});
+    const Property=await PropertyDetailsModel.findOne({_id:ppid});
     // console.log(Property)
     if(Property){
-      const UpdatedProperty=await PropertyModel.updateOne( { _id: ppid },req.body);
+      const UpdatedProperty=await PropertyDetailsModel.updateOne( { _id: ppid },req.body);
       console.log(UpdatedProperty)
       res.status(200).json({
         status:'success',
