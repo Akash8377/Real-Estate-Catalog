@@ -2,8 +2,9 @@ import "./propertylist.css"
 import { FaRegImages } from 'react-icons/fa'
 import { AiFillEye } from 'react-icons/ai';
 import { MdEdit } from 'react-icons/md';
-import { useEffect, useState } from "react";
-import axios from 'axios';
+import { Link } from "react-router-dom";
+// import { useEffect, useState } from "react";
+// import axios from 'axios';
 const PropertyList = ( {propertydetail}) => {
   console.log(propertydetail)
   const soldstyle = {
@@ -16,11 +17,11 @@ const PropertyList = ( {propertydetail}) => {
 
 //  useEffect(()=>{
 
-  axios.get('http://localhost:5000/getpropertylist').then((response)=>{
-            console.log(response.data.result);
-            setpropertydetails(response.data.result);
-            console.log(propertydetails,'information')
-    }).catch(error=>console.log(error))
+  // axios.get('http://localhost:5000/getpropertylist').then((response)=>{
+  //           console.log(response.data.result);
+  //           setpropertydetails(response.data.result);
+  //           console.log(propertydetails,'information')
+  //   }).catch(error=>console.log(error))
    
 //  },[])
 
@@ -54,7 +55,7 @@ const PropertyList = ( {propertydetail}) => {
           <tbody>
             {propertydetail.map((propertydata, i) => (
               <tr className='tabledata' key={i}><td className="tdtext ppdidtxt">{propertydata._id}</td>
-                <td className="tdtext"><FaRegImages /></td>
+                <td className="tdtext"><a href={propertydata.image} target="_blank"><FaRegImages /></a></td>
                 <td className="tdtext">{propertydata.propertyType}</td>
                 <td className="tdtext tdmobile">{propertydata.mobile}</td>
                 <td className="tdtext">{propertydata.totalArea}</td>
