@@ -24,7 +24,7 @@ const BasicInfo = ({ formData, setFormData }) => {
 
             <label className='input-box' htmlFor='price'>Price <br />
                 <input type='text' id='price' name='price' placeholder='Example: 100000'
-                    onChange={(e) => handleFormData(e)} class='input' value={'' || formData.price} />
+                    onChange={(e) => handleFormData(e)} className='input' value={'' || formData.price} />
             </label><br />
 
             <label className='input-box' htmlFor='propertyAge'>Property Age <br />

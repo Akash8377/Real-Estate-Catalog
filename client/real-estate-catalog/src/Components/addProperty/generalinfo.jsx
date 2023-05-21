@@ -11,6 +11,13 @@ const GeneralInfo = ({formData, setFormData}) => {
             return {...previousData, [name]: value}
         });
     }
+    const handlePhoto = (e) => {
+            const name = e.target.name;
+            const value = e.target.files[0];
+            setFormData(previousData => {
+                return {...previousData, [name]:value}
+            })
+    }
 
     return (
         <form className='form-container'>
@@ -20,7 +27,7 @@ const GeneralInfo = ({formData, setFormData}) => {
             </label><br/>
 
             <label className='input-box' htmlFor='mobile'>Mobile <br/>
-                <input type='text' id='mobile' name='mobile' placeholder='Enter Mobile Number' 
+                <input type='number' id='mobile' name='mobile' placeholder='Enter Mobile Number' 
                 onChange={(e) => {handleFormData(e)}} className='input' value={"" || formData.mobile}/>
             </label><br/>
 
@@ -66,7 +73,8 @@ const GeneralInfo = ({formData, setFormData}) => {
             <label className='photo-input' htmlFor='photo-input'><AiFillCamera className='camera-icon'/>Add Photo<br/>
                 <input type='file'
                     id='photo-input'
-                    onChange={e => handleFormData(e)}
+                    name='image'
+                    onChange={e => handlePhoto(e)}
                     // className='photo-input'
                     // value={"" || formData.mobile}
                 />

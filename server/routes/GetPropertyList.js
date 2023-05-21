@@ -1,11 +1,11 @@
 const GetListRouter=require('express').Router();
-const PropertyModel=require('../models/property-model');
+const PropertyDetailsModel=require('../models/property-model');
 
 
 GetListRouter.get('/getpropertylist',async(req,res)=>{
     try{
-      const PropertyList= await PropertyModel.find({});
-      console.log(PropertyList)
+      const PropertyList= await PropertyDetailsModel.find({});
+      // console.log(PropertyList)
       if(PropertyList){
         res.status(201).json({
             status:"success",
@@ -22,34 +22,24 @@ GetListRouter.get('/getpropertylist',async(req,res)=>{
 
 GetListRouter.get('/search',async(req,res)=>{
     try{
+<<<<<<< HEAD
+        const prop=req.body;
+      const PropertyList= await PropertyDetailsModel.find({prop});
+      console.log(PropertyList)
+=======
         const {ppid}=req.query;
         console.log(ppid)
-        if(ppid){
-          const PropertyList= await PropertyModel.find({_id:ppid});
-          console.log(PropertyList,1)
-          if(PropertyList){
-            res.status(201).json({
-                status:"success",
-                result:PropertyList})
-          }else{
-            res.status(400).json({
-                status:"failure",
-                result:'could not find'})
-          }
-        }else{
-          const PropertyList= await PropertyModel.find({});
-          console.log(PropertyList,1)
-          if(PropertyList){
-            res.status(201).json({
-                status:"success",
-                result:PropertyList})
-          }else{
-            res.status(400).json({
-                status:"failure",
-                result:'could not find'})
-          }
-        }
-     
+      const PropertyList= await PropertyModel.find({_id:ppid});
+      console.log(PropertyList,1)
+      if(PropertyList){
+        res.status(201).json({
+            status:"success",
+            result:PropertyList})
+      }else{
+        res.status(400).json({
+            status:"failure",
+            result:'could not find'})
+      }
     }catch(err){
         throw err
     }
