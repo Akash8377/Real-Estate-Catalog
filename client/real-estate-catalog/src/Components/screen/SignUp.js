@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './signup-in.css'
 import { useState } from 'react'
 import swal from 'sweetalert';
+import M from 'materialize-css'
 
 
 const SignUp = () => {
@@ -11,8 +12,8 @@ const SignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmpassword, setConfirmpassword] = useState('')
-    const [error, setError] = useState();
-    const [flag, setFlag] = useState(false)
+    // const [error, setError] = useState();
+    // const [flag, setFlag] = useState(false)
 
     const userData = () =>{
         fetch('/signup',{
@@ -30,8 +31,9 @@ const SignUp = () => {
         .then(data => {
             if(data.error){
                 console.log(data.error)
-                setError(data.error)
-                setFlag(true)
+                // setError(data.error)
+                // setFlag(true)
+                M.toast({html: data.error})
             }else{
                 console.log(data.message)
                 swal({
@@ -52,7 +54,7 @@ const SignUp = () => {
             <div className='font-s-l font-c-l logo-m-b'>Logo</div>
             <p className='font-s-sm  font-opct'>Create New Account</p>
             {/* <div id='showMessage'>All fields are mandatory</div> */}
-            <div className='showMessage'>{!flag ? '' : error}</div>
+            {/* <div className='showMessage'>{!flag ? '' : error}</div> */}
             <div className="input-filed">
                 <input 
                     type="text"

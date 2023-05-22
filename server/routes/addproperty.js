@@ -50,7 +50,10 @@ router.post("/newprop",(req,res)=>{
 
     const post = new PropertyDetailsModel({
         ...newProperty,
-        image: img
+        image: img,
+        views: 0, // default is 0
+        Status: "Unsold", // default is unsold
+        daysLeft: 10, //Defalt is 10
     })
 
     post.save().then((data)=>{

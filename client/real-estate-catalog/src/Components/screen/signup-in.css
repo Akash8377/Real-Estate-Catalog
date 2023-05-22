@@ -91,3 +91,16 @@ body{
 .signUp-btn > button:hover{
     color: black;
 }
+
+#toast-container{
+    width: 10%;
+    height: auto;
+    text-align: center;
+    padding: 14px;
+    border-radius: 5px;
+    background-color: #ff3d00;
+    border: 1px solid rgb(168, 20, 20);
+    margin-top: -550px !important;
+    margin-right: 500px !important;
+    margin-left: auto !important;
+}

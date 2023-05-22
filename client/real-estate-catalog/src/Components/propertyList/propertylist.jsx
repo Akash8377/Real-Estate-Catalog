@@ -60,7 +60,7 @@ const EditFunc = (propertydata) => {
           <tbody>
             {propertydetail.map((propertydata, i) => (
               <tr className='tabledata' key={i}><td className="tdtext ppdidtxt">{propertydata._id}</td>
-                <td className="tdtext"><a href={propertydata.image} target="_blank"><FaRegImages /></a></td>
+                <td className="tdtext"><a href={propertydata.image} target="_blank" rel="noreferrer"><FaRegImages /></a></td>
                 <td className="tdtext">{propertydata.propertyType}</td>
                 <td className="tdtext tdmobile">{propertydata.mobile}</td>
                 <td className="tdtext">{propertydata.totalArea}</td>
