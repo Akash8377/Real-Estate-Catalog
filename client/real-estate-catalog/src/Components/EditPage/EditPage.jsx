@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { AiFillCamera } from 'react-icons/ai';
 import './EditPage.css'
@@ -11,7 +11,7 @@ const EditPage = () => {
     const location = useLocation();
     const propertydetail = location.state && location.state.propertydetail;
     const _id = propertydetail && propertydetail._id;
-    console.log(propertydetail); // Log the propertydetail to the console
+    // console.log(propertydetail); // Log the propertydetail to the console
     const [formData, setFormData] = useState({
         propertyType: '',
         price: '',
@@ -130,6 +130,7 @@ const EditSend = (formData) => {
     e.preventDefault();
     // Perform any necessary form validation or data processing
     EditSend(formData);
+    
   };
 
   return (

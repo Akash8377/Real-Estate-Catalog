@@ -2,12 +2,12 @@ import "./propertylist.css"
 import { FaRegImages } from 'react-icons/fa'
 import { AiFillEye } from 'react-icons/ai';
 import { MdEdit } from 'react-icons/md';
-import { useEffect, useState } from "react";
-import axios from 'axios';
+// import { useEffect, useState } from "react";
+// import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 const PropertyList = ( {propertydetail}) => {
-  console.log(propertydetail)
+  // console.log(propertydetail)
   const soldstyle = {
     color: '#416899',
     background: '#F5FAF5',
@@ -60,7 +60,7 @@ const EditFunc = (propertydata) => {
           <tbody>
             {propertydetail.map((propertydata, i) => (
               <tr className='tabledata' key={i}><td className="tdtext ppdidtxt">{propertydata._id}</td>
-                <td className="tdtext"><a href={propertydata.image} target="_blank" rel="noreferrer"><FaRegImages /></a></td>
+                <td className="tdtext"><a href={propertydata.image} target="_blank" rel="noreferrer"><FaRegImages className="imgIcon" /></a></td>
                 <td className="tdtext">{propertydata.propertyType}</td>
                 <td className="tdtext tdmobile">{propertydata.mobile}</td>
                 <td className="tdtext">{propertydata.totalArea}</td>

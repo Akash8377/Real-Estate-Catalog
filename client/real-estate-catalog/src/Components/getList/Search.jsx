@@ -1,6 +1,6 @@
 import "../propertyList/propertylist.css"
 import PropertyList from "../propertyList/propertylist"
-import { BsSearch, BsPlus } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import AddProperty from "../addProperty/main";
@@ -21,7 +21,7 @@ const SearchRes = ({ property }) => {
   }
 
   const [propertydetails ,setpropertydetails ]=useState([])
-  const authToken = localStorage.getItem("authorization")
+  // const authToken = localStorage.getItem("authorization")
   useEffect(()=>{
       axios.get('http://localhost:5000/getpropertylist').then((response)=>{
               console.log(response.data.result);
@@ -55,7 +55,7 @@ const SearchRes = ({ property }) => {
           </button>
         </div>
         <Link to='/addproperty'><button type='sumbit' className='addbtn' onClick={AddProperty}>
-          <BsPlus /> Add Property
+          + Add Property
         </button></Link>
       </div>
 

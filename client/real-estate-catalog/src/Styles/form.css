@@ -74,12 +74,22 @@ label{
     margin: 30px;
     padding: 10px;
     width: 200px;
-    border-color: #7fbfff;
+    /* border-color: #7fbfff; */
+    border: none;
+    cursor: pointer
     
 }
 
 .btn2 {
     background-color: #8a4af3;
+    border: none;
+    cursor: pointer;
+}
+.btn2:hover{
+    transform: scale(1.1);
+}
+.btn1:hover{
+    transform: scale(1.1);
 }
 
 .navbar {
