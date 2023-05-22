@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import BasicInfo from './basicinfo';
 import PropertDetail from './propertydetail';
 import GeneralInfo from './generalinfo';
 import LocationInfo from './location';
-import axios from 'axios'
+// import axios from 'axios'
 import '../../Styles/form.css';
 import { useNavigate } from "react-router-dom";
 
@@ -12,6 +12,7 @@ const Form = () => {
     const authToken = localStorage.getItem("authorization")
     const navigate = useNavigate();
     const [page, setPage] = useState(0);
+    const [imgUrl, setImgUrl] = useState('')
 
     const [formData, setFormData] = useState({
         propertyType: '',
@@ -63,6 +64,35 @@ const Form = () => {
     //     throw err
     // })
 
+    useEffect(()=>{
+        if(imgUrl){
+         fetch("/newprop",{
+             method:"post",
+             headers:{
+                 "Content-Type":"application/json",
+                 "Authorization":authToken
+             },
+             body:JSON.stringify({
+                ...formData,
+                img: imgUrl
+             })
+         })
+         .then(res=>res.json())
+         .then(data=>{
+     
+            if(data.error){
+                console.log(data.error)
+            }
+            else{
+                alert("added successfully")
+                navigate('/home')
+                // console.log(imgUrl)
+            }
+         }).catch(err=>{
+             console.log(err)
+         })
+     }
+     },[imgUrl])
 
     function handleSubmit() {
         // console.log(formData.image)
@@ -77,29 +107,30 @@ const Form = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data.url)
-            setFormData(prevFormData => ({
-                ...prevFormData,
-                image: data.url,
-              }));
-              console.log(formData.image)
+            // console.log(data.url)
+            // setFormData(prevFormData => ({
+            //     ...prevFormData,
+            //     image: data.url,
+            //   }));
+            setImgUrl(data.url)
+            //   console.log(formData.image)
         })
         .catch(err => {
             console.log(err)
         })
 
         
-        axios({
-            url: "http://localhost:5000/newprop",//for url
-            method: "POST",
-            headers: {
-                authorization: authToken
-            },
-            data: formData
-        }).then((res) => {
-            alert("added successfully")
-            navigate("/home");
-        })
+        // axios({
+        //     url: "http://localhost:5000/newprop",//for url
+        //     method: "POST",
+        //     headers: {
+        //         authorization: authToken
+        //     },
+        //     data: formData
+        // }).then((res) => {
+        //     alert("added successfully")
+        //     navigate("/home");
+        // })
     };
 
     function handelCancel() {
