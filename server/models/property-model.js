@@ -1,147 +1,147 @@
 const mongoose = require("mongoose")
 const propertyschema = new mongoose.Schema({
     propertyType: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Property Type"]
     },
     price: {
-        type: Number,
+        type: Number||null,
         require: [true, "Please Add Price"]
     },
     propertyAge: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Property Age"]
     },
     propertyDiscription: {
-        type: String,
+        type: String || null,
         require: [true, "Please Add Property Discription"]
     },
     negotiable: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Negotiable Type"]
     },
     ownership: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Ownership Type"]
     },
     propertyApproved: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Property Approved Type"]
     },
     bankLoan: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Bank Loan Type"]
     },
     length: {
-        type: Number,
+        type: Number || null,
         require: [true, "Please Add Length"]
     },
     breadth: {
-        type: Number,
+        type: Number|| null,
         require: [true, "Please Add Breadth"]
     },
     totalArea: {
-        type: Number,
+        type: Number || null,
         require: [true, "Please Add Total Area"]
     },
     areaUnit: {
-        type: String,
+        type: String || null,
         require: [true, "Please Add Area Unit"]
     },
     noOfBHK: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Number of BHK"]
     },
     noOfFloor: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Number of Floor"]
     },
     attached: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Attached Type"]
     },
     westernToilet: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Western Toilet Type"]
     },
     furnished: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Furnished Type"]
     },
     carParking: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Car Parking Type"]
     },
     lift: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Lift Type"]
     },
     electricity: {
-        type: Number,
+        type: Number || null,
         require: [true, "Please Add Electricity Phase"]
     },
     facing: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Facing Type"]
     },
     name: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Owner Type"]
     },
     mobile: {
-        type: Number,
+        type: Number || null,
         require: [true, "Please Add Mobile Number"]
     },
     postedBy: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select posted By Type"]
     },
     saleType: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Sale Type"]
     },
     featuredPackage: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Featured Package Type"]
     },
     PPDPackage: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select PPD Package Type"]
     },
     image: {
-        type: String,
+        type: String || null,
         require: true
     },
     email: {
-        type: String,
+        type: String || null,
         require: [true, "Please Add Email"]
     },
     city: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select City"]
     },
     area: {
-        type: String,
+        type: String || null,
         require: [true, "Please Select Area"]
     },
     pincode: {
-        type: String,
+        type: String|| null,
         require: [true, "Please Select Pincode"]
     },
     address: {
-        type: String,
+        type: String || null,
         require: [true, "Please Add Address"]
     },
     landmark: {
-        type: String,
+        type: String|| null,
         require: [true, "Please Add Landmark"]
     },
     latitude: {
-        type: Number,
+        type: Number|| null,
         require: [true, "Please Add Latitude"]
     },
     longitude: {
-        type: Number,
+        type: Number|| null,
         require: [true, "Please Add Longitude"]
     },
     views: String,
