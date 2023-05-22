@@ -37,7 +37,7 @@ GetListRouter.get('/search',async(req,res)=>{
                 result:'could not find'})
           }
         }else{
-          const PropertyList= await PropertyDetailsModel.find({_id:ppid});
+          const PropertyList= await PropertyDetailsModel.find({});
           console.log(PropertyList,1)
           if(PropertyList){
             res.status(201).json({
